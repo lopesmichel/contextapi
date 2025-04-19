@@ -1,29 +1,31 @@
-import {  } from 'react'
+import "./App.css";
 
+// 1 - config react router, sem links
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import './App.css'
-
-import Navbar from "./components/Navbar";
+// pages
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Products from "./pages/Products";
 
-function App() {
+// 2 - adicionando links
+// components
+import Navbar from "./components/Navbar";
 
+function App() {
   return (
-    <div>
-      <h1>context</h1>
+    <div className="App">
+      <h1>Context</h1>
       <BrowserRouter>
-      <Navbar />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/about" element={<About />} />
+          <Route path="products" element={<Products />} />
+          <Route path="about" element={<About />} />
         </Routes>
       </BrowserRouter>
     </div>
   );
 }
 
-export default App
+export default App;

@@ -3,8 +3,15 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 
-createRoot(document.getElementById('root')).render(
+import { CounterContextProvider } from "./context/CounterContex.jsx";
+import { TitleColorContextProvider } from "./context/TitleColorContext";
+
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <CounterContextProvider>
+      <TitleColorContextProvider>
+        <App />
+      </TitleColorContextProvider>
+    </CounterContextProvider>
+  </StrictMode>
+);
